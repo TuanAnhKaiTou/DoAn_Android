@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Trả lời câu hỏi</string>
+    <string name="text_name">Tên đăng nhập</string>
+    <string name="text_password">Mật khẩu</string>
+    <string name="btn_login">Đăng nhập</string>
+    <string name="btn_forgot_password">Quên mật khẩu</string>
+    <string name="btn_register">Đăng ký</string>
+    <string name="text_login_with_fb">Đăng nhập với Facebook</string>
+    <string name="text_login_with_gg">Đăng nhập với Google</string>
+    <string name="activity_register">Đăng ký tài khoản</string>
+    <string name="activity_forgot_pass">Quên mật khẩu</string>
+    <string name="text_email">Email</string>
+    <string name="text_repassword">Xác nhận mật khẩu</string>
+    <string name="btn_recover_password">Lấy lại mật khẩu</string>
+    <string name="activity_login">Màn hình chính</string>
+    <string name="btn_manage_account">Quản lý tài khoản</string>
+    <string name="btn_new_game">Trò chơi mới</string>
+    <string name="btn_buy_credit">Mua credit</string>
+    <string name="btn_history">Lịch sử chơi</string>
+    <string name="btn_high_score">Điểm cao nhất</string>
+    <string name="text_change_avatar">Đổi hình đại diện</string>
+    <string name="btn_update">Cập nhật</string>
+    <string name="activity_new_game">Chơi game</string>
+    <string name="activity_manage_account">Quản lý tài khoản</string>
+    <string name="hint_user_name"><font size="20">Tên tài khoản</font></string>
+    <string name="hint_pass_word"><font size="20">Mật khẩu</font></string>
+    <string name="txt_point">Điểm:</string>
+    <string name="txt_num_point">0</string>
+    <string name="txt_choose_field">Chọn lĩnh vực</string>
+    <string name="txt_question">Câu hỏi</string>
+    <string name="txt_num_question">1</string>
+    <string name="txt_time">30s</string>
+</resources>
