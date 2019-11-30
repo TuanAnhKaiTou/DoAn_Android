@@ -1,21 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ntanh.doan_android">
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:networkSecurityConfig="@xml/network_security"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".NewGameActivity"
+        <activity android:name=".BuyCreditActivity"
+            android:label="@string/activity_buy_credit"
+            android:parentActivityName=".LoginActivity" />
+        <activity
+            android:name=".NewGameActivity"
             android:label="@string/activity_new_game"
-            android:parentActivityName=".LoginActivity"></activity>
-        <activity android:name=".ManageAccountActivity"
+            android:parentActivityName=".LoginActivity" />
+        <activity
+            android:name=".ManageAccountActivity"
             android:label="@string/activity_manage_account"
-            android:parentActivityName=".LoginActivity"></activity>
+            android:parentActivityName=".LoginActivity" />
         <activity
             android:name=".LoginActivity"
             android:label="@string/activity_login"

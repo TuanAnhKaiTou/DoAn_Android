@@ -8,10 +8,10 @@
 
     <ImageView
         android:id="@+id/image_logo"
-        android:layout_width="197dp"
-        android:layout_height="174dp"
+        android:layout_width="190dp"
+        android:layout_height="170dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="32dp"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,7 +20,7 @@
         app:srcCompat="@drawable/logo2" />
 
     <EditText
-        android:id="@+id/edit_text_name"
+        android:id="@+id/edt_tendangnhap_forgotpass"
         android:layout_width="300dp"
         android:layout_height="45dp"
         android:layout_marginStart="16dp"
@@ -38,7 +38,7 @@
         app:layout_constraintTop_toBottomOf="@+id/image_logo" />
 
     <EditText
-        android:id="@+id/edit_text_password"
+        android:id="@+id/edt_matkhau_register"
         android:layout_width="300dp"
         android:layout_height="45dp"
         android:layout_marginStart="16dp"
@@ -54,7 +54,7 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_name" />
+        app:layout_constraintTop_toBottomOf="@+id/edt_tendangnhap_forgotpass" />
 
     <Button
         android:id="@+id/button_login"
@@ -63,14 +63,14 @@
         android:layout_marginStart="56dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="56dp"
-        android:onClick="loginView"
-        android:textColor="#fff"
-        android:text="@string/btn_login"
         android:background="@drawable/custom_edit_button"
+        android:onClick="loginView"
+        android:text="@string/btn_login"
+        android:textColor="#fff"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_password" />
+        app:layout_constraintTop_toBottomOf="@+id/edt_matkhau_register" />
 
     <Button
         android:id="@+id/button_forgot_password"

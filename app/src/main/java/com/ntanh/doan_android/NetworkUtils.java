@@ -9,10 +9,13 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Map;
 
 public class NetworkUtils {
     private static final String LOG_TAG = NetworkUtils.class.getSimpleName();
     private static final String BASE_URL =  "http://10.0.2.2:8000/api/"; // AVD
+    public static String GET = "GET";
+    public static String POST = "POST";
 
     static String getJSONData(String uri, String method) {
         HttpURLConnection urlConnection = null;
@@ -47,6 +50,38 @@ public class NetworkUtils {
         Uri.Builder builder =  Uri.parse(BASE_URL + uri).buildUpon();
         for(int i=0; i<nameParams.length; i++) {
             builder.appendQueryParameter(nameParams[i].toString(), valueParams[i].toString());
+        }
+        Uri builtURI = builder.build();
+
+        try {
+
+            URL requestURL = new URL(builtURI.toString());
+            urlConnection = (HttpURLConnection) requestURL.openConnection();
+            urlConnection.setRequestMethod(method);
+            urlConnection.connect();
+
+            // Get the InputStream.
+            InputStream inputStream = urlConnection.getInputStream();
+            jsonString = convertToString(inputStream);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (urlConnection != null) {
+                urlConnection.disconnect();
+            }
+        }
+
+        Log.d(LOG_TAG, jsonString);
+        return jsonString;
+    }
+
+    static String getJSONData(String uri, String method, Map<String, String> paramets) {
+        HttpURLConnection urlConnection = null;
+        String jsonString = null;
+        Uri.Builder builder =  Uri.parse(BASE_URL + uri).buildUpon();
+        for (String key: paramets.keySet() ) {
+            builder.appendQueryParameter(key, paramets.get(key));
         }
         Uri builtURI = builder.build();
 

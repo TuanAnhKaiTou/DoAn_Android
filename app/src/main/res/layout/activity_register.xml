@@ -8,10 +8,10 @@
 
     <ImageView
         android:id="@+id/image_logo4"
-        android:layout_width="197dp"
-        android:layout_height="174dp"
+        android:layout_width="190dp"
+        android:layout_height="170dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="32dp"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,57 +20,70 @@
         app:srcCompat="@drawable/logo2" />
 
     <EditText
-        android:id="@+id/edit_text_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/edt_tendangnhap_forgotpass"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="56dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="96dp"
+        android:layout_marginEnd="56dp"
         android:backgroundTintMode="multiply"
         android:ems="10"
         android:inputType="textPersonName"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:hint="@string/hint_user_name"
+        android:textSize="20sp"
+        android:textCursorDrawable="@drawable/color_cursor"
+        android:background="@drawable/custom_edit_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image_logo4" />
 
     <EditText
-        android:id="@+id/edit_text_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="24dp"
+        android:id="@+id/edt_email_forgotpass"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/custom_edit_text"
         android:backgroundTintMode="multiply"
         android:ems="10"
+        android:hint="@string/hint_email"
         android:inputType="textEmailAddress"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_name" />
+        android:textCursorDrawable="@drawable/color_cursor"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/edt_tendangnhap_forgotpass"
+        app:layout_constraintStart_toStartOf="@+id/edt_tendangnhap_forgotpass"
+        app:layout_constraintTop_toBottomOf="@+id/edt_tendangnhap_forgotpass" />
 
     <EditText
-        android:id="@+id/edit_text_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="24dp"
+        android:id="@+id/edt_matkhau_register"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/custom_edit_text"
         android:backgroundTintMode="multiply"
         android:ems="10"
+        android:hint="@string/hint_pass_word"
         android:inputType="textPassword"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_email" />
+        android:textCursorDrawable="@drawable/color_cursor"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/edt_email_forgotpass"
+        app:layout_constraintStart_toStartOf="@+id/edt_email_forgotpass"
+        app:layout_constraintTop_toBottomOf="@+id/edt_email_forgotpass" />
 
     <EditText
-        android:id="@+id/edit_text_pre_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="24dp"
+        android:id="@+id/edt_pre_password_register"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/custom_edit_text"
         android:backgroundTintMode="multiply"
         android:ems="10"
+        android:hint="@string/text_repassword"
         android:inputType="textPassword"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_password" />
+        android:textCursorDrawable="@drawable/color_cursor"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/edt_matkhau_register"
+        app:layout_constraintStart_toStartOf="@+id/edt_matkhau_register"
+        app:layout_constraintTop_toBottomOf="@+id/edt_matkhau_register" />
 
     <Button
         android:id="@+id/button_register"
@@ -79,8 +92,12 @@
         android:layout_marginStart="56dp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="56dp"
+        android:background="@drawable/custom_edit_button"
         android:text="@string/btn_register"
+        android:textColor="#fff"
+        android:textSize="18sp"
+        android:onClick="handleRegister"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_pre_password" />
+        app:layout_constraintTop_toBottomOf="@+id/edt_pre_password_register" />
 </androidx.constraintlayout.widget.ConstraintLayout>

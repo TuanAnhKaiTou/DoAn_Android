@@ -30,4 +30,12 @@
     <string name="txt_question">Câu hỏi</string>
     <string name="txt_num_question">1</string>
     <string name="txt_time">30s</string>
+    <string name="hint_email">Email</string>
+    <string name="txt_name">KaiTou</string>
+    <string name="txt_credit">2000cre</string>
+    <string name="hint_repassword">Xác nhận mật khẩu</string>
+    <string name="txt_buy_credit">100</string>
+    <string name="txt_credit_of_user">2000</string>
+    <string name="txt_50">50:50</string>
+    <string name="activity_buy_credit">Mua credit</string>
 </resources>
