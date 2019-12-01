@@ -20,6 +20,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private EditText mTenDangNhap, mMatKhau, mEmail, mReMatKhau;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +53,7 @@ public class RegisterActivity extends AppCompatActivity {
             paramets.put("ten_dang_nhap", ten_dang_nhap);
             paramets.put("email",email);
             paramets.put("mat_khau", mat_khau);
-            new UserAsyncTask(this, NetworkUtils.POST, paramets, "Register"){
+            new UserAsyncTask(this, NetworkUtils.POST, paramets, "Register", "Waiting for register..."){
                 @Override
                 public void ProgressJS(Context context, ProgressDialog progressDialog, String json) {
                     try {

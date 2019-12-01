@@ -32,14 +32,13 @@ public class LoginActivity extends AppCompatActivity {
             mTenDangNhap.setText(jsonObject.getString("ten_dang_nhap"));
             mCredit.setText(jsonObject.getString("credit"));
         }catch (JSONException e){
-
+            e.printStackTrace();
         }
-
-
     }
 
     public void manageAccountView(View view) {
         Intent intent = new Intent(this, ManageAccountActivity.class);
+        intent.putExtra("json", jsonObject.toString());
         startActivity(intent);
     }
 

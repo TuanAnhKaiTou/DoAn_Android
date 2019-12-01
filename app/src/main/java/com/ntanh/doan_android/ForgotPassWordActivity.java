@@ -43,7 +43,7 @@ public class ForgotPassWordActivity extends AppCompatActivity {
             Map<String, String> paramets = new HashMap<>();
             paramets.put("ten_dang_nhap", ten_dang_nhap);
             paramets.put("email",email);
-            new UserAsyncTask(this, NetworkUtils.POST, paramets, "Register"){
+            new UserAsyncTask(this, NetworkUtils.POST, paramets, "Forgot Password", "Waiting for forgot..."){
                 @Override
                 public void ProgressJS(Context context, ProgressDialog progressDialog, String json) {
                     try {

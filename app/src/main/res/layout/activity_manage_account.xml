@@ -7,7 +7,7 @@
     tools:context=".ManageAccountActivity">
 
     <ImageView
-        android:id="@+id/image_avatar2"
+        android:id="@+id/img_hinhDaiDien"
         android:layout_width="190dp"
         android:layout_height="190dp"
         android:layout_marginStart="32dp"
@@ -20,19 +20,20 @@
         app:srcCompat="@drawable/pichu" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/txt_hinhDaiDien_manager"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:onClick="handleChangeAvatar"
         android:text="@string/text_change_avatar"
         android:textColor="#030303"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image_avatar2" />
+        app:layout_constraintTop_toBottomOf="@+id/img_hinhDaiDien" />
 
     <EditText
-        android:id="@+id/edit_user_name"
+        android:id="@+id/edt_tenDangNhap_manager"
         android:layout_width="300dp"
         android:layout_height="45dp"
         android:layout_marginStart="56dp"
@@ -48,10 +49,10 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_hinhDaiDien_manager" />
 
     <EditText
-        android:id="@+id/edit_password"
+        android:id="@+id/edt_password_manager"
         android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_marginTop="16dp"
@@ -62,12 +63,12 @@
         android:textCursorDrawable="@drawable/color_cursor"
         android:background="@drawable/custom_edit_text"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/edit_email"
-        app:layout_constraintStart_toStartOf="@+id/edit_email"
-        app:layout_constraintTop_toBottomOf="@+id/edit_email" />
+        app:layout_constraintEnd_toEndOf="@+id/edt_email_manager"
+        app:layout_constraintStart_toStartOf="@+id/edt_email_manager"
+        app:layout_constraintTop_toBottomOf="@+id/edt_email_manager" />
 
     <EditText
-        android:id="@+id/edit_repassword"
+        android:id="@+id/edt_repassword_manager"
         android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_marginTop="16dp"
@@ -78,12 +79,12 @@
         android:textCursorDrawable="@drawable/color_cursor"
         android:background="@drawable/custom_edit_text"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/edit_password"
-        app:layout_constraintStart_toStartOf="@+id/edit_password"
-        app:layout_constraintTop_toBottomOf="@+id/edit_password" />
+        app:layout_constraintEnd_toEndOf="@+id/edt_password_manager"
+        app:layout_constraintStart_toStartOf="@+id/edt_password_manager"
+        app:layout_constraintTop_toBottomOf="@+id/edt_password_manager" />
 
     <EditText
-        android:id="@+id/edit_email"
+        android:id="@+id/edt_email_manager"
         android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_marginTop="16dp"
@@ -94,9 +95,9 @@
         android:textSize="20sp"
         android:textCursorDrawable="@drawable/color_cursor"
         android:background="@drawable/custom_edit_text"
-        app:layout_constraintEnd_toEndOf="@+id/edit_user_name"
-        app:layout_constraintStart_toStartOf="@+id/edit_user_name"
-        app:layout_constraintTop_toBottomOf="@+id/edit_user_name" />
+        app:layout_constraintEnd_toEndOf="@+id/edt_tenDangNhap_manager"
+        app:layout_constraintStart_toStartOf="@+id/edt_tenDangNhap_manager"
+        app:layout_constraintTop_toBottomOf="@+id/edt_tenDangNhap_manager" />
 
     <Button
         android:id="@+id/button_update"
@@ -107,11 +108,12 @@
         android:layout_marginEnd="32dp"
         android:background="@drawable/custom_edit_button"
         android:text="@string/btn_update"
+        android:onClick="handleManager"
         android:textColor="#fff"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_repassword" />
+        app:layout_constraintTop_toBottomOf="@+id/edt_repassword_manager" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

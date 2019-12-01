@@ -14,10 +14,12 @@ public class UserAsyncTask extends AsyncTask<String, Void, String> implements Xu
     private String METHOD;
     private Map<String, String> paramets;
     private String titleProgressDialog;
+    private String messageProgressDialog;
 
 
-    public UserAsyncTask(Context context, String METHOD, Map<String,String> paramets, String titleProgressDialog) {
+    public UserAsyncTask(Context context, String METHOD, Map<String,String> paramets, String titleProgressDialog, String messageProgressDialog) {
         this.titleProgressDialog = titleProgressDialog;
+        this.messageProgressDialog = messageProgressDialog;
         this.context = context;
         this.METHOD = METHOD;
         this.paramets = paramets;
@@ -28,6 +30,7 @@ public class UserAsyncTask extends AsyncTask<String, Void, String> implements Xu
     protected void onPreExecute() {
         progressDialog = new ProgressDialog(context);
         progressDialog.setTitle(this.titleProgressDialog);
+        progressDialog.setMessage(this.messageProgressDialog);
         progressDialog.show();
     }
 

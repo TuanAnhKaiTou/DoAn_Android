@@ -62,7 +62,7 @@ public class CustomDialog extends Dialog implements View.OnClickListener  {
                     Map<String, String> paramets = new HashMap<>();
                     paramets.put("mat_khau", mat_khau);
                     paramets.put("ten_dang_nhap", this.ten_dang_nhap);
-                    new UserAsyncTask(context, NetworkUtils.POST, paramets, "Register"){
+                    new UserAsyncTask(context, NetworkUtils.POST, paramets, "Update password", "waiting for update pass..."){
                         @Override
                         public void ProgressJS(Context context, ProgressDialog progressDialog, String json) {
                             try {

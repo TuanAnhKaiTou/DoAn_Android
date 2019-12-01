@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         paramets.put("ten_dang_nhap",mTenDangNhap.getText().toString());
         paramets.put("mat_khau",mMatKhau.getText().toString());
 
-        new UserAsyncTask(this,NetworkUtils.POST, paramets, "Login"){
+        new UserAsyncTask(this,NetworkUtils.POST, paramets, "Login", "Waiting for login..."){
             @Override
             public void ProgressJS(Context context, ProgressDialog progressDialog, String json) {
                 try {
