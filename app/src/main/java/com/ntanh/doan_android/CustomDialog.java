@@ -23,6 +23,7 @@ public class CustomDialog extends Dialog implements View.OnClickListener  {
     private Button btnDoiMatKhau, btnHuy;
     private Context context;
     private String ten_dang_nhap;
+
     public CustomDialog(@NonNull Context context, String ten_dang_nhap) {
         super(context);
         this.context = context;
@@ -33,7 +34,9 @@ public class CustomDialog extends Dialog implements View.OnClickListener  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.setContentView(R.layout.custom_forget_pass);
+        this.setCanceledOnTouchOutside(false);
         this.setTitle("Lấy mật khẩu");
+
 
         mMatKhau = findViewById(R.id.edtMatKhauMoi_forget);
         mReMatKhau = findViewById(R.id.edtReMatKhauMoi_forget);
@@ -49,17 +52,17 @@ public class CustomDialog extends Dialog implements View.OnClickListener  {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btnDoiMatKhau_forget:
-                String mat_khau = mMatKhau.getText().toString();
-                String re_mat_khau = mReMatKhau.getText().toString();
+                final String mat_khau = mMatKhau.getText().toString();
+                final String re_mat_khau = mReMatKhau.getText().toString();
                 // ktra mat khau trung vs nhap lai mat khau ko trong
                 if (!Ultilis.CheckForgotPass(mat_khau, re_mat_khau)) {
                     Toast.makeText(context, "Không để trông thông tin", Toast.LENGTH_SHORT).show();
                 }
                 // ktra mat khau trung vs nhap lai mat khau
                 else if (!mat_khau.equals(re_mat_khau)) {
-                    Toast.makeText(context, "Nhập lại mật khẩu đúng", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "Nhập lại mật khẩu không đúng", Toast.LENGTH_SHORT).show();
                 } else {
-                    Map<String, String> paramets = new HashMap<>();
+                    final Map<String, String> paramets = new HashMap<>();
                     paramets.put("mat_khau", mat_khau);
                     paramets.put("ten_dang_nhap", this.ten_dang_nhap);
                     new UserAsyncTask(context, NetworkUtils.POST, paramets, "Update password", "waiting for update pass..."){
@@ -68,16 +71,15 @@ public class CustomDialog extends Dialog implements View.OnClickListener  {
                             try {
                                 JSONObject jsonObject = new JSONObject(json);
                                 if (jsonObject.getBoolean("success") == true) {
-
                                     Toast.makeText(context, jsonObject.getString("notifi"), Toast.LENGTH_SHORT).show();
                                 } else {
                                     Toast.makeText(context, jsonObject.getString("notifi"), Toast.LENGTH_SHORT).show();
                                 }
                                 progressDialog.dismiss();
+                                dismiss();
                             } catch (JSONException e) {
                                 Log.d("JSOn_EXception", "Failed ProgressJson");
                             }
-
                         }
                     }.execute("get-new-pass");
                 }

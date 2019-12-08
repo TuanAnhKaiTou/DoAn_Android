@@ -3,9 +3,6 @@ package com.ntanh.doan_android;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
-import android.util.Log;
-
-import java.util.ArrayList;
 import java.util.Map;
 
 public class UserAsyncTask extends AsyncTask<String, Void, String> implements XuLyJS {

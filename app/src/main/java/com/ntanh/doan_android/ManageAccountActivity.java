@@ -69,18 +69,19 @@ public class ManageAccountActivity extends AppCompatActivity {
                     try {
                         JSONObject jsonObject = new JSONObject(json);
                         if (jsonObject.getBoolean("success") == true) {
-
                             Toast.makeText(context, jsonObject.getString("notifi"), Toast.LENGTH_SHORT).show();
                         } else {
                             Toast.makeText(context, jsonObject.getString("notifi"), Toast.LENGTH_SHORT).show();
                         }
                         progressDialog.dismiss();
+
                     } catch (JSONException e) {
                         Log.d("JSOn_EXception", "Failed ProgressJson");
                     }
 
                 }
             }.execute("manager");
+            finish();
         }
     }
 

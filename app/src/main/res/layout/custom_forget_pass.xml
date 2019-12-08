@@ -1,32 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:orientation="vertical" android:layout_width="350dp"
+    android:layout_height="320dp">
+
+    <TextView
+        android:id="@+id/txt_forgot_pass_dialog"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:text="Forgot Pass"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textSize="24sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:textColor="#030303"
+        android:textStyle="bold" />
     <EditText
         android:id="@+id/edtMatKhauMoi_forget"
         android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/custom_edit_text"
+        android:backgroundTintMode="multiply"
+        android:ems="10"
         android:hint="@string/hint_pass_word"
-        android:layout_height="wrap_content"></EditText>
+        android:importantForAutofill="no"
+        android:inputType="textPassword"
+        android:textCursorDrawable="@drawable/color_cursor"
+        android:textSize="20sp"></EditText>
     <EditText
         android:id="@+id/edtReMatKhauMoi_forget"
         android:layout_width="match_parent"
         android:hint="@string/hint_repassword"
-        android:layout_height="wrap_content"></EditText>
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/custom_edit_text"
+        android:backgroundTintMode="multiply"
+        android:ems="10"
+        android:importantForAutofill="no"
+        android:inputType="textPassword"
+        android:textCursorDrawable="@drawable/color_cursor"
+        android:textSize="20sp"></EditText>
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <Button
             android:id="@+id/btnDoiMatKhau_forget"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="Đổi mật khẩu"
-            android:layout_height="wrap_content"></Button>
+            android:textSize="18sp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+
+            android:textColor="#fff"
+            android:background="@drawable/custom_edit_button"></Button>
+
         <Button
             android:id="@+id/btnHuy_forget"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:textSize="18sp"
+            android:background="@drawable/custom_edit_button"
             android:text="Hủy"
-            android:layout_height="wrap_content"></Button>
+            android:textColor="#fff"></Button>
     </LinearLayout>
 
 </LinearLayout>

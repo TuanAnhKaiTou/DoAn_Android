@@ -51,6 +51,7 @@ public class ForgotPassWordActivity extends AppCompatActivity {
                         if (jsonObject.getBoolean("success") == true) {
                             // Show 1 dialog de thay doi mat khau
                             new CustomDialog(context, ten_dang_nhap).show();
+
                         } else {
                             Toast.makeText(context, jsonObject.getString("notifi"), Toast.LENGTH_SHORT).show();
                         }
