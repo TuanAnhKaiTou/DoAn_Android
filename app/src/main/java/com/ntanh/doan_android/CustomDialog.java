@@ -67,7 +67,7 @@ public class CustomDialog extends Dialog implements View.OnClickListener  {
                     paramets.put("ten_dang_nhap", this.ten_dang_nhap);
                     new UserAsyncTask(context, NetworkUtils.POST, paramets, "Update password", "waiting for update pass..."){
                         @Override
-                        public void ProgressJS(Context context, ProgressDialog progressDialog, String json) {
+                        public void ProgressJS(Context context, String json) {
                             try {
                                 JSONObject jsonObject = new JSONObject(json);
                                 if (jsonObject.getBoolean("success") == true) {
@@ -75,7 +75,6 @@ public class CustomDialog extends Dialog implements View.OnClickListener  {
                                 } else {
                                     Toast.makeText(context, jsonObject.getString("notifi"), Toast.LENGTH_SHORT).show();
                                 }
-                                progressDialog.dismiss();
                                 dismiss();
                             } catch (JSONException e) {
                                 Log.d("JSOn_EXception", "Failed ProgressJson");

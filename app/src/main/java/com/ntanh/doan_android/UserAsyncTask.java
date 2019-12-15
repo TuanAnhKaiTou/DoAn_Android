@@ -3,6 +3,8 @@ package com.ntanh.doan_android;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
+import android.util.Log;
+
 import java.util.Map;
 
 public class UserAsyncTask extends AsyncTask<String, Void, String> implements XuLyJS {
@@ -12,6 +14,7 @@ public class UserAsyncTask extends AsyncTask<String, Void, String> implements Xu
     private Map<String, String> paramets;
     private String titleProgressDialog;
     private String messageProgressDialog;
+    private boolean flagProgressDialog;
 
 
     public UserAsyncTask(Context context, String METHOD, Map<String,String> paramets, String titleProgressDialog, String messageProgressDialog) {
@@ -20,15 +23,25 @@ public class UserAsyncTask extends AsyncTask<String, Void, String> implements Xu
         this.context = context;
         this.METHOD = METHOD;
         this.paramets = paramets;
+        this.flagProgressDialog = true;
 
+    }
+
+    public UserAsyncTask(Context context, String METHOD,  Map<String,String> paramets) {
+        this.context = context;
+        this.METHOD = METHOD;
+        this.paramets = paramets;
+        this.flagProgressDialog = false;
     }
 
     @Override
     protected void onPreExecute() {
-        progressDialog = new ProgressDialog(context);
-        progressDialog.setTitle(this.titleProgressDialog);
-        progressDialog.setMessage(this.messageProgressDialog);
-        progressDialog.show();
+        if (this.flagProgressDialog) {
+            progressDialog = new ProgressDialog(context);
+            progressDialog.setTitle(this.titleProgressDialog);
+            progressDialog.setMessage(this.messageProgressDialog);
+            progressDialog.show();
+        }
     }
 
     @Override
@@ -39,12 +52,16 @@ public class UserAsyncTask extends AsyncTask<String, Void, String> implements Xu
 
     @Override
     protected void onPostExecute(String s) {
-        ProgressJS(context,this.progressDialog, s);
+        ProgressJS(context, s);
+        if (this.flagProgressDialog) {
+            this.progressDialog.dismiss();
+        }
 
     }
 
     @Override
-    public void ProgressJS( Context context,ProgressDialog progressDialog, String json) {
-        progressDialog.dismiss();
+    public void ProgressJS( Context context,String json) {
+
     }
+
 }

@@ -80,9 +80,10 @@ public class NetworkUtils {
         HttpURLConnection urlConnection = null;
         String jsonString = null;
         Uri.Builder builder =  Uri.parse(BASE_URL + uri).buildUpon();
-        for (String key: paramets.keySet() ) {
-            builder.appendQueryParameter(key, paramets.get(key));
-        }
+        if(paramets != null)
+            for (String key: paramets.keySet() ) {
+                builder.appendQueryParameter(key, paramets.get(key));
+            }
         Uri builtURI = builder.build();
 
         try {

@@ -65,7 +65,7 @@ public class ManageAccountActivity extends AppCompatActivity {
 
             new UserAsyncTask(this, NetworkUtils.POST, paramets, "Manager", "Waiting for manager..."){
                 @Override
-                public void ProgressJS(Context context, ProgressDialog progressDialog, String json) {
+                public void ProgressJS(Context context, String json) {
                     try {
                         JSONObject jsonObject = new JSONObject(json);
                         if (jsonObject.getBoolean("success") == true) {
@@ -73,7 +73,7 @@ public class ManageAccountActivity extends AppCompatActivity {
                         } else {
                             Toast.makeText(context, jsonObject.getString("notifi"), Toast.LENGTH_SHORT).show();
                         }
-                        progressDialog.dismiss();
+
 
                     } catch (JSONException e) {
                         Log.d("JSOn_EXception", "Failed ProgressJson");

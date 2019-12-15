@@ -47,16 +47,14 @@ public class MainActivity extends AppCompatActivity {
         } else {
             new UserAsyncTask(this, NetworkUtils.POST, paramets, "Login", "Waiting for login...") {
                 @Override
-                public void ProgressJS(Context context, ProgressDialog progressDialog, String json) {
+                public void ProgressJS(Context context, String json) {
                     try {
                         JSONObject jsonObject = new JSONObject(json);
                         if (jsonObject.getBoolean("success") == true) {
                             Intent intent = new Intent(context, LoginActivity.class);
                             intent.putExtra("json", jsonObject.getJSONObject("data").toString());
                             startActivity(intent);
-                            progressDialog.dismiss();
                         } else {
-                            progressDialog.dismiss();
                             Toast.makeText(context, jsonObject.getString("notifi"), Toast.LENGTH_SHORT).show();
                         }
 
